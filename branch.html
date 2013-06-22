@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<head>
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<script src="js/fullscreen.js"></script>
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+<div id="impress">
+    <div id="overall" class="step" style="height: 650px; z-index: -1;" data-x="0" data-y="0" data-scale="1">
+		<div class="float-div" style="left: 0px; top: 440px;">
+		<div class="blue-font title">运维管理开发概述</div>
+		<div class="black-font subtitle" style="margin-left: 150px; margin-top: 5px;">by John Wong</div>
+		</div>
+		<div class="float-div" style="width: 280px; height:626px; left: 422px; top: 55px;">
+			<div id="bg-div"></div>
+		</div>
+		<div class="float-div" style="width: 190px;height: 190px; left: 560px; top: 365px;opacity: 0.6;">
+			<img src="images/circle.svg" width="190" height="190"/>			
+		</div>
+		<div class="float-div" style="width: 150px; height: 150px; left: 347px; top: 260px;opacity: 0.6;">
+			<img src="images/circle.svg" width="150" height="150" />			
+		</div>
+		<div class="float-div" style="width: 128px; height: 128px; left: 490px; top: 116px;opacity: 0.6;">
+			<img src="images/circle.svg" width="128" height="128" />			
+		</div>
+		<div class="float-div" style="width: 94px; height: 94px; left: 670px; top: 84px;opacity: 0.6;">
+			<img src="images/circle.svg" width="94" height="94" />			
+		</div>
+		<div class="float-div" style="width: 60px; height: 60px; left: 634px; top: 20px;opacity: 0.6;">
+			<img src="images/circle.svg" width="60" height="60" />			
+		</div>
+    </div>
+	<div id="chapter-1" class="step" style="height: 650px;" data-x="198.5" data-y="137.5" data-scale="0.2575" data-rotate="25">
+		<div class="float-div">
+			<div class="blue-font title-two" style="margin-left: 440px; margin-top: 80px;">业务需求</div>
+			<div class="black-font content indent" style="margin-left: 340px;margin-top: 10px;width: 340px;">包括变更管理、工单管理和问题管理。</div>
+		</div>
+	</div>
+	<div id="chapter-2" class="step" style="height: 650px;" data-x="-27.5" data-y="14" data-scale="0.2025" data-rotate="-15">
+		<div class="float-div">
+			<div class="blue-font title-two" style="margin-left: 320px; margin-top: 80px;">数据需求</div>
+			<div class="black-font content indent" style="margin-left: 160px; margin-top: 10px;width: 420px;">包括变更管理、工单管理和问题管理。</div>
+		</div>
+	</div>
+	<div id="chapter-3" class="step" style="height: 650px;" data-x="102" data-y="-141" data-scale="0.1725" data-rotate="-5">
+		<div class="float-div">
+			<div class="blue-font title-two" style="margin-left: 350px; margin-top: 80px;">数据需求</div>
+			<div class="black-font content indent" style="margin-left: 190px; margin-top: 10px;width: 420px;">包括变更管理、工单管理和问题管理。</div>
+		</div>
+	</div>
+	<div id="chapter-4" class="step" style="height: 650px;" data-x="264" data-y="-194" data-scale="0.1275" data-rotate="45">
+		<div class="float-div">
+			<div class="blue-font title-two" style="margin-left: 350px; margin-top: 80px;">数据需求</div>
+			<div class="black-font content indent" style="margin-left: 190px; margin-top: 10px;width: 420px;">包括变更管理、工单管理和问题管理。</div>
+		</div>
+	</div>
+	<div id="chapter-5" class="step" style="height: 650px;" data-x="213.75" data-y="-273" data-scale="0.0825" data-rotate="0">
+		<div class="float-div">
+			<div class="blue-font title-two" style="margin-left: 350px; margin-top: 80px;">数据需求</div>
+			<div class="black-font content indent" style="margin-left: 190px; margin-top: 10px;width: 420px;">包括变更管理、工单管理和问题管理。</div>
+		</div>
+	</div>
+	<div id="draft" data-x="0" data-y="0" data-scale="1">
+		<canvas id="draft-canvas" width="900" height="700"></canvas>
+	</div>
+</div>
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<div id="time-menu" class="dropdown clearfix control">
+    <ul class="dropdown-menu" style="display: block; position: static;">
+        <li class="control" onclick="startAutoPlay(20)"><div><b>20 sec</b></div></li>
+        <li class="control" onclick="startAutoPlay(10)"><div><b>10 sec</b></div></li>
+        <li class="control" onclick="startAutoPlay(5)"><div><b>5 sec</b></div></li>
+        <li class="control" onclick="stopAutoPlay()"><div><b>Off</b></div></li>
+    </ul>
+</div>
+	
+<div class="navbar navbar-fixed-bottom control">
+    <div class="navbar-inner">
+		<div class="container">
+            <ul class="nav">
+              <li class="control"><div class="no-padding" onclick="api.first();"><img class="padding-five" src="images/home-5-24.png"/></div></li>
+              <li class="control"><div class="no-padding" onclick="api.prev();"><img class="padding-five" src="images/arrow-21-24.png"/></div></li>
+              <li class="control"><div class="no-padding" onclick="api.next();"><img class="padding-five" src="images/arrow-22-24.png"/></div></li>
+              <li class="control"><div class="no-padding" onclick="showHideById('draft')"><img class="padding-five" src="images/glyphicons_edit.png"/></div></li>
+            </ul>
+        </div>
+		<div id="right-container" class="container">
+            <ul id="right-control" class="nav">
+              <li class="control"><div class="no-padding" onclick="showHideById('time-menu')"><img class="padding-five" src="images/time-5-24.png"/></div></li>
+              <li class="control"><div class="no-padding" onclick="window.fullScreenApi.changeFullScreen();"><img class="padding-five" src="images/fullscreen-12-24.png"/></div></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="js/impress.js"></script>
+<script>
+var byId = function ( id ) {
+    return document.getElementById(id);
+};
+
+var api = impress(); 
+api.init();
+api.initCustom(byId("draft"));
+
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+
+var showHideById = function (id){
+    var style = byId(id).style;
+	if(style['display'] == 'block')
+	    style['display'] = 'none';
+	else
+	    style['display'] = 'block';
+}
+
+var startAutoPlay = function (sec){
+    api.startAutoPlay(sec);
+    showHideById("time-menu");
+}
+
+var stopAutoPlay = function (){
+	api.stopAutoPlay();
+    showHideById("time-menu");
+}
+
+var drawLine = function(x1, y1, x2, y2) {
+	var canvas = byId('draft-canvas');
+	var ctx=canvas.getContext('2d');
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "#1b1b1b";
+	ctx.beginPath();
+	ctx.moveTo(x1, y1);
+	ctx.lineTo(x2, y2);
+	ctx.stroke();
+}
+
+var setCursor = function(){
+	var ele = byId('draft');
+	var lastX;
+	var lastY;
+	var start = false;
+	ele.addEventListener('mousedown', function(e){
+		drawLine(0, 0, 100, 100);
+		start = true;
+		lastX = e.offsetX;
+		lastY = e.offsetY;
+		e.preventDefault();
+		e.stopPropagation();
+		e.target.style.cursor = 'glyphicons_pencil.ico), move';
+	}, false);
+	
+	ele.addEventListener('mousemove', function(e) {
+		if(start){
+			drawLine(lastX, lastY, e.offsetX, e.offsetY);
+			lastX = e.offsetX;
+			lastY = e.offsetY;
+		}
+	}, false);
+	
+	ele.addEventListener('mouseup', function(e) {
+		start = false;
+		e.target.style.cursor = 'glyphicons_pencil.ico), default';
+	}, false);
+}
+setCursor();
+
+</script>
+</body>
+</html>

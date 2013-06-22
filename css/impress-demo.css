@@ -48,7 +48,9 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-
+html{
+background: #fff;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -85,6 +87,7 @@ body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
 
+/*
     background: rgb(215, 215, 215);
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
@@ -92,6 +95,7 @@ body {
     background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+*/
 }
 
 /*
@@ -107,7 +111,6 @@ a {
     color: inherit;
     text-decoration: none;
     padding: 0 0.1em;
-    background: rgba(255,255,255,0.5);
     text-shadow: -1px -1px 2px rgba(100,100,100,0.9);
     border-radius: 0.2em;
 
@@ -175,9 +178,10 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
+    font-family: 'arial', 'PT Serif', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
+	z-index: 10;
 }
 
 /*
@@ -187,7 +191,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 1.0;//TODO
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -388,31 +392,6 @@ a:focus {
 #imagination .imagination {
     font-size: 78px;
 }
-
-/*
-    There is nothing really special about 'use the source, Luke' step, too,
-    except maybe of the Yoda background.
-
-    As you can see below I've 'hard-coded' it in data URL.
-    That's not the best way to serve images, but because that's just this one
-    I decided it will be OK to have it this way.
-
-    Just make sure you don't blindly copy this approach.
-*/
-#source {
-    width: 700px;
-    padding-bottom: 300px;
-
-    /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAMAAACwUBm+AAAAAXNSR0IArs4c6QAAAKtQTFRFsAAAvbWSLUUrLEQqY1s8UYJMqJ1vNTEgOiIdIzYhjIFVLhsXZ6lgSEIsP2U8JhcCVzMsSXZEgXdOO145XJdWOl03LzAYMk4vSXNExr+hwcuxRTs1Qmk+RW9Am49eFRANQz4pUoNMQWc+OSMDTz0wLBsCNVMxa2NBOyUDUoNNSnlEWo9VRGxAVzYFl6tXCggHbLNmMUIcHhwTXkk5f3VNRT8wUT8xAAAACQocRBWFFwAAAAF0Uk5TAEDm2GYAAAPCSURBVHja7d3JctNAFIZRMwRCCGEmzPM8z/D+T8bu/ptbXXJFdij5fMt2Wuo+2UgqxVmtttq5WVotLzBgwIABAwYMGDCn0qVqbo69psPqVpWx+1XG5iaavF8wYMCAAQMGDBgwi4DJ6Y6qkxB1HNlcN3a92gbR5P2CAQMGDBgwYMCAWSxMlrU+UY5yu2l9okfV4bAxUVbf7TJnAwMGDBgwYMCAAbMLMHeqbGR82Zy+VR1Ht81nVca6R+UdTLaU24Ruzd3qM/e4yjnAgAEDBgwYMGDA7AJMd1l/3NRdVGcj3eX/2WEhCmDGxnM7yqygu8XIPjJj8iN/MGDAgAEDBgwYMAuDGb8q0RGlLCHLv1t9qDKWn3vdNHVuEI6HPaxO9Jo3GDBgwIABAwYMmIXBdC9ShGgMk+XnkXUeuGcsP/e1+lhNnZsL/G5Vs3OAAQMGDBgwYMCAWSxMR3SzOmraG5atdy9wZKzb+vg16qyqe2FltbnAgAEDBgwYMGDALAxmTJSuN3WA76rnVca6GTnemGN1WoEBAwYMGDBgwIBZGMxUomy4+xO899V4LAg5Xnc2MGDAgAEDBgwYMGA218Wq+2K1LDqvY9xZu8zN8fICdM6btYABAwYMGDBgwIABMzfH0+pGU5afze2tXebmeAfVz+p8BQYMGDBgwIABAwbMPBzZ+oWmfJrln1273FhkbHzee9WWbw7AgAEDBgwYMGDALAKm43hcdctKgblcPamOhuXnXlY5Xs6bsW4FGyQCAwYMGDBgwIABswiYMceZKgvMo+h8mrHLTdn676rj+FEFoTtHd8MwOxEYMGDAgAEDBgyYRcBM5UhXqiymW3R3c9ARhWO/OmjqfjVZy+xEYMCAAQMGDBgwYBYG073OnCV0RFNhMhaOa9WfKmOB6XjHMN1tQmaAAQMGDBgwYMCA2VWY7vXjz1U4croAzgPztwIDBgwYMGDAgAEDZhswh035NBw59Dww3RgYMGDAgAEDBgwYMJuD6f4tXT7NUqfCdBvZLkxXdgQGDBgwYMCAAQNmt2DGj8WzwAfV/w7T/aq7mxwwYMCAAQMGDBgwuwqTOo7uTwTngflSzQ3TdaJvAwEDBgwYMGDAgAED5gSvgbyo5oHZ4Pc+gwEDBgwYMGDAgAEzhOm+5G0qTGaAAQMGDBgwYMCAAXNaMOcnls3tNwWm+zRzp54NDBgwYMCAAQMGDJh5YNL36k1TLuGvVq+qnKMbS5n7tulT9asCAwYMGDBgwIABA2ZumKuztLnjgQEDBgwYMGDAgNl5mH/4/ltKA6vBNAAAAABJRU5ErkJggg==);
-    background-position: bottom right;
-    background-repeat: no-repeat;
-}
-
-#source q {
-    font-size: 60px;
-}
-
 /*
     And the "it's in 3D" step again brings some 3D typography - just for fun.
 
@@ -701,3 +680,264 @@ a:focus {
     Thanks for reading. I hope you enjoyed it at least as much as I enjoyed writing it
     for you.
 */
+
+/* Customed css here */
+/* navbar */
+.navbar-fixed-bottom {
+bottom: 0;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+height: 32px;
+position: fixed;
+right: 0;
+left: 0;
+margin-bottom: 0;
+}
+.navbar-fixed-bottom .navbar-inner {
+-webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+padding-right: 0;
+padding-left: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.navbar-fixed-bottom .navbar-inner {
+border-width: 1px 0 0;
+width: 100%;
+position: absolute;
+bottom: 0;
+pointer-events: none;
+}
+.navbar-inner {
+min-height: 32px;
+padding-right: 20px;
+padding-left: 20px;
+
+background-color: #2b2b2b;
+background-image: -moz-linear-gradient(top, #333333, #222222);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+background-image: -webkit-linear-gradient(top, #333333, #222222);
+background-image: -o-linear-gradient(top, #333333, #222222);
+background-image: linear-gradient(to bottom, #333333, #222222);
+background-repeat: repeat-x;
+border-color: #252525;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+.navbar-inner:before, .navbar-inner:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.navbar-inner:after {
+clear: both;
+}
+.navbar-inner:before, .navbar-inner:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.container:before, .container:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.container:after {
+clear: both;
+}
+.container:before, .container:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.navbar .nav {
+position: relative;
+left: 0;
+display: block;
+float: left;
+margin: auto;
+padding: 0;
+}
+.nav {
+margin-bottom: 20px;
+margin-left: 0;
+list-style: none;
+border-left: 1px solid black;
+border-right: 1px solid #666;
+}
+.navbar .nav > li {
+width: 100px;
+float: left;
+border-left: 1px solid #666;
+border-right: 1px solid black;
+line-height: 20px;
+text-align: center;
+}
+li:hover,
+li:focus{
+background: #000;
+}
+.navbar .nav > li > div >b , .dropdown-menu > li > div{
+border-radius: 0;
+color: #ffffff;
+float: none;
+padding: 6px;
+text-decoration: none;
+display: block;
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+text-shadow: none;
+}
+.container {
+width: 412px;
+margin-right: auto;
+margin-left: auto;
+}
+.control{
+pointer-events: auto;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 28px;
+  vertical-align: text-top;
+  background-image: url("../images/glyphicons-halflings-white.png");
+  background-size: 938px;
+  background-repeat: no-repeat;
+}
+.icon-fullscreen {
+  background-position: -912px -288px;
+}
+.icon-time {
+  background-position: -96px -48px;
+}
+#right-control > li {
+width: 50px;
+}
+
+#draft {
+width: 900px;
+height: 700px;
+z-index: 15;
+cursor: url(../images/glyphicons_pencil.ico), move!important;
+display: none;
+}
+
+#right-container{
+width: 106px;
+position: absolute;
+float:right;
+right: 0;
+bottom: 0;
+}
+.no-padding{
+padding: 0;
+height: 32px;
+}
+.blue-font {
+color: #004F75;
+}
+.black-font {
+color: #000;
+}
+.title {
+font-size: 36px;
+font-weight: bold;
+}
+.title-two {
+font-size: 34px;
+font-weight: bold;
+}
+.content {
+font-size: 28px;
+line-height: 1.25;
+}
+.indent{
+text-indent: 2em;
+}
+.float-div{
+position: absolute;
+}
+#whole-bg{ 
+margin-left: 380px; 
+margin-top: 100px;
+}
+.subtitle{
+	font-size: 20px;
+}
+
+/* dropdown-menu */
+.dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+background-color: #2b2b2b;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+}
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+.dropdown-menu > li > div {
+text-decoration: none;
+display: block;
+padding: 3px 20px;
+clear: both;
+font-weight: normal;
+line-height: 20px;
+color: #fff;
+white-space: nowrap;
+}
+.dropdown-menu > li > div:hover, .dropdown-menu > li > div:focus, .dropdown-submenu:hover > div, .dropdown-submenu:focus > div{
+color: #ffffff;
+text-decoration: none;
+background-color: #000;
+}
+#time-menu{
+display: none;
+position: absolute; 
+bottom: 34px;
+right: 38px;
+}
+.padding-five{
+padding: 5px;
+}
+#bg-div{
+width: 280px; 
+height: 626px; 
+background:url(../images/branchingouttree-011.png) no-repeat; 
+background-size: 280px;
+}

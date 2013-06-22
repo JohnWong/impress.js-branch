@@ -327,6 +327,33 @@
                 transformStyle: "preserve-3d"
             });
         };
+		
+		var initCustom = function ( el ) {
+            var data = el.dataset;
+            var step = {
+                    translate: {
+                        x: toNumber(data.x),
+                        y: toNumber(data.y),
+                        z: toNumber(data.z)
+                    },
+                    rotate: {
+                        x: toNumber(data.rotateX),
+                        y: toNumber(data.rotateY),
+                        z: toNumber(data.rotateZ || data.rotate)
+                    },
+                    scale: toNumber(data.scale, 1),
+                    el: el
+                };
+            
+            css(el, {
+                position: "absolute",
+                transform: "translate(-50%,-50%)" +
+                           translate(step.translate) +
+                           rotate(step.rotate) +
+                           scale(step.scale),
+                transformStyle: "preserve-3d"
+            });
+        };
         
         // `init` API function that initializes (and runs) the presentation.
         var init = function () {
@@ -375,7 +402,7 @@
                 transformStyle: "preserve-3d"
             };
             
-            css(root, rootStyles);
+			css(root, rootStyles);
             css(root, {
                 top: "50%",
                 left: "50%",
@@ -563,7 +590,38 @@
             
             return goto(next);
         };
+		
+		var first = function () {
+            return goto(0);
+        };
+		
+		var last = function () {
+			goto(steps.length - 1);
+        };
         
+		var playTimer = null;
+		var startAutoPlay = function (sec) {
+			if(playTimer != null)
+			    stopAutoPlay();
+            playTimer = setInterval(playNext, 1000 * sec);
+        };
+		
+		var stopAutoPlay = function(){
+		    if (playTimer != null){
+				clearInterval(playTimer);
+				playTimer = null;
+			}
+		}
+		
+		var playNext = function() {
+		    var next = steps.indexOf( activeStep ) + 1;
+			if (next == steps.length){
+				stopAutoPlay();
+				return goto(0);
+			}
+            return goto(next);
+		}
+		
         // Adding some useful classes to step elements.
         //
         // All the steps that have not been shown yet are given `future` class.
@@ -635,7 +693,12 @@
             init: init,
             goto: goto,
             next: next,
-            prev: prev
+            prev: prev,
+			first: first,
+			last: last,
+			startAutoPlay: startAutoPlay,
+			stopAutoPlay: stopAutoPlay,
+			initCustom: initCustom
         });
 
     };
@@ -727,7 +790,10 @@
             // event delegation with "bubbling"
             // check if event target (or any of its parents is a link)
             var target = event.target;
-            while ( (target.tagName !== "A") &&
+			if(target.tagName == "HTML"){
+				api.first();
+			}
+			while ( (target.tagName !== "A") &&
                     (target !== document.documentElement) ) {
                 target = target.parentNode;
             }
