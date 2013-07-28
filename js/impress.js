@@ -14,6 +14,8 @@
  *  version: 0.5.3
  *  url:     http://bartaz.github.com/impress.js/
  *  source:  http://github.com/bartaz/impress.js/
+ * ------------------------------------------------
+ * notice: switch hardware acceleration mode off if using Chrome to avoid distortion of svg.
  */
 
 /*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
