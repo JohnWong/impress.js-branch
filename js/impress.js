@@ -108,7 +108,7 @@
     
     // `triggerEvent` builds a custom DOM event with given `eventName` and `detail` data
     // and triggers it on element given as `el`.
-    var triggerEvent = function (el, eventName, detail) {
+	var triggerEvent = function (el, eventName, detail) {
         var event = document.createEvent("CustomEvent");
         event.initCustomEvent(eventName, true, true, detail);
         el.dispatchEvent(event);
@@ -329,8 +329,10 @@
                 transformStyle: "preserve-3d"
             });
         };
-		
-		var initCustom = function ( el ) {
+		var initCustom = function ( el, callback) {
+			root.addEventListener("impress:stepenter", function (event) {
+					callback();
+				}, false);
             var data = el.dataset;
             var step = {
                     translate: {
@@ -693,6 +695,7 @@
         // store and return API for given impress.js root element
         return (roots[ "impress-root-" + rootId ] = {
             init: init,
+			rootId: rootId,
             goto: goto,
             next: next,
             prev: prev,

@@ -774,7 +774,7 @@ border-left: 1px solid black;
 border-right: 1px solid #666;
 }
 .navbar .nav > li {
-width: 100px;
+width: 75px;
 float: left;
 border-left: 1px solid #666;
 border-right: 1px solid black;
@@ -797,7 +797,7 @@ font-size: 14px;
 text-shadow: none;
 }
 .container {
-width: 412px;
+width: 312px;
 margin-right: auto;
 margin-left: auto;
 }
@@ -914,23 +914,46 @@ list-style-type: disc;
 .dropdown-menu > li > div {
 text-decoration: none;
 display: block;
-padding: 3px 20px;
 clear: both;
 font-weight: normal;
-line-height: 20px;
 color: #fff;
 white-space: nowrap;
+}
+.menu-item {
+padding: 8px 20px !important;
+}
+.sub-menu{
+display: inline-block;
+width: 24px;
+height: 24px;
+margin-left: 8px;
+}
+.sub-menu:hover{
+    opacity: 0.5;
+}
+#pen-container{
+padding-top: 4px;
+padding-right: 8px;
+padding-bottom: 2px;
+padding-left: 0px;
 }
 .dropdown-menu > li > div:hover, .dropdown-menu > li > div:focus, .dropdown-submenu:hover > div, .dropdown-submenu:focus > div{
 color: #ffffff;
 text-decoration: none;
 background-color: #000;
 }
+#menu-bar{
+margin-bottom: 34px; height: 108px; display: none;
+}
 #time-menu{
 display: none;
 position: absolute; 
 bottom: 34px;
 right: 38px;
+}
+#pen-menu{
+position: relative;
+left: 228px;
 }
 .padding-five{
 padding: 5px;

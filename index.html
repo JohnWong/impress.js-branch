@@ -65,10 +65,83 @@
 			<div class="black-font content indent" style="margin-left: 190px; margin-top: 10px;width: 420px;">包括变更管理、工单管理和问题管理。</div>
 		</div>
 	</div>
-	<div id="draft" data-x="0" data-y="0" data-scale="1">
-		<svg id="draft-svg" xmlns="http://www.w3.org/2000/svg" version="1.1"  width="900" height="700">
-			<line x1="0" y1="0" x2="500" y2="500" stroke="#004f75" stroke-width="10"></line>
-		</svg>
+	<div id="draft" data-x="-450" data-y="-350" data-scale="0.1">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="9000" height="7000" id="draft-svg">
+	<defs>
+	<style type="text/css">
+    </style>
+	</defs> 
+	<script type="text/javascript">
+	<![CDATA[
+	var svgApi = (function(){
+	var color = 0;
+	var oriWidth = 1;
+	var width = 1;
+	var ele = document.getElementById("draft-svg");
+	var lastX;
+	var lastY;
+	var start = false;
+	var colors = ["red", "yellow", "#004f75", "green"];
+	var ns = "http://www.w3.org/2000/svg";
+	function drawLine(x1, y1, x2, y2) {
+		var line = document.createElementNS(ns,"line");
+		line.setAttribute("x1", x1);
+		line.setAttribute("y1", y1);
+		line.setAttribute("x2", x2);
+		line.setAttribute("y2", y2);
+		line.setAttribute("stroke", colors[color]);
+		line.setAttribute("stroke-width", width * 2);
+		ele.appendChild(line);
+		var circle = document.createElementNS(ns,"circle");
+		circle.setAttribute("cx", x2);
+		circle.setAttribute("cy", y2);
+		circle.setAttribute("r", width);
+		circle.setAttribute("fill", colors[color]);
+		ele.appendChild(circle);
+	}
+
+	ele.addEventListener('mousedown', function(e){
+		start = true;
+		lastX = e.offsetX;
+		lastY = e.offsetY;
+		e.preventDefault();
+		e.stopPropagation();
+		e.target.style.cursor = 'glyphicons_pencil.ico), move';
+	}, false);
+	
+	ele.addEventListener('mousemove', function(e) {
+		if(start){
+			drawLine(lastX, lastY, e.offsetX, e.offsetY);
+			lastX = e.offsetX;
+			lastY = e.offsetY;
+		}
+	}, false);
+	
+	ele.addEventListener('mouseup', function(e) {
+		start = false;
+	}, false);
+	
+	function setWidth(i){
+		if(!i)
+			i = oriWidth;
+		else
+			oriWidth = i;
+		var root = document.getElementById(impress().rootId);
+		var mc = root.style.webkitTransform.match(/scale\([0-9\.]*\)/)[0];
+		mc = mc.replace("scale(", "").replace(")", "");
+		width = i * 10.0 / Number(mc);
+	}
+	return {
+		setColor: function(i){
+			color = i;
+		},
+		setWidth: setWidth,
+		update: setWidth
+	};
+})();
+	]]>
+	</script>
+</svg>	
 	</div>
 </div>
 <div class="hint">
@@ -76,13 +149,32 @@
 </div>
 <div id="time-menu" class="dropdown clearfix control">
     <ul class="dropdown-menu" style="display: block; position: static;">
-        <li class="control" onclick="startAutoPlay(20)"><div><b>20 sec</b></div></li>
-        <li class="control" onclick="startAutoPlay(10)"><div><b>10 sec</b></div></li>
-        <li class="control" onclick="startAutoPlay(5)"><div><b>5 sec</b></div></li>
-        <li class="control" onclick="stopAutoPlay()"><div><b>Off</b></div></li>
+        <li class="control" onclick="startAutoPlay(20)"><div class="menu-item"><b>20 sec</b></div></li>
+        <li class="control" onclick="startAutoPlay(10)"><div class="menu-item"><b>10 sec</b></div></li>
+        <li class="control" onclick="startAutoPlay(5)"><div class="menu-item"><b>5 sec</b></div></li>
+        <li class="control" onclick="stopAutoPlay()"><div class="menu-item"><b>Off</b></div></li>
     </ul>
 </div>
-	
+<div id="menu-bar" class="navbar navbar-fixed-bottom">
+	<div class="container">
+		<div id="pen-menu" class="control">
+		<ul class="dropdown-menu" style="display: block;">
+			<li class="control">
+			<div id="pen-container">
+			<div class="sub-menu" onclick="svgApi.setColor(0);" style="background-color:red"></div><div class="sub-menu" onclick="svgApi.setColor(1);" style="background-color:yellow"></div><div class="sub-menu" onclick="svgApi.setColor(2);" style="background-color:#004f75"></div><div class="sub-menu" onclick="svgApi.setColor(3);" style="background-color:green"></div>
+			</div>
+			</li>
+			<li class="control">
+			<div id="pen-container">
+			<div class="sub-menu" onclick="svgApi.setWidth(1);" style="background: url(images/width1.svg)"></div><div class="sub-menu" onclick="svgApi.setWidth(2);" style="background: url(images/width2.svg)"></div><div class="sub-menu" onclick="svgApi.setWidth(4);" style="background: url(images/width3.svg)""></div><div class="sub-menu" onclick="svgApi.setWidth(8);" style="background: url(images/width4.svg)""></div>
+			</div>
+			</li>
+			<li class="control" onclick="showHideById('draft')"><div class="menu-item"><b>On/Off</b></div>
+			</li>
+		</ul>
+		</div>
+	</div>
+</div>
 <div class="navbar navbar-fixed-bottom control">
     <div class="navbar-inner">
 		<div class="container">
@@ -90,7 +182,7 @@
               <li class="control"><div class="no-padding" onclick="api.first();"><img class="padding-five" src="images/home-5-24.png"/></div></li>
               <li class="control"><div class="no-padding" onclick="api.prev();"><img class="padding-five" src="images/arrow-21-24.png"/></div></li>
               <li class="control"><div class="no-padding" onclick="api.next();"><img class="padding-five" src="images/arrow-22-24.png"/></div></li>
-              <li class="control"><div class="no-padding" onclick="showHideById('draft')"><img class="padding-five" src="images/glyphicons_edit.png"/></div></li>
+              <li class="control"><div class="no-padding" onclick="showHideById('menu-bar')"><img class="padding-five" src="images/glyphicons_edit.png"/></div></li>
             </ul>
         </div>
 		<div id="right-container" class="container">
@@ -113,7 +205,7 @@ var byId = function ( id ) {
 
 var api = impress(); 
 api.init();
-api.initCustom(byId("draft"));
+api.initCustom(byId("draft"), svgApi.update);
 
 if ("ontouchstart" in document.documentElement) { 
     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
@@ -136,56 +228,6 @@ var stopAutoPlay = function (){
 	api.stopAutoPlay();
     showHideById("time-menu");
 }
-
-var setCursor = function(){
-	var ele = byId('draft-svg');
-	var lastX;
-	var lastY;
-	var start = false;
-	
-	function drawLine(x1, y1, x2, y2) {
-		var line = document.createElementNS("http://www.w3.org/2000/svg","line");
-		line.setAttribute("x1", x1);
-		line.setAttribute("y1", y1);
-		line.setAttribute("x2", x2);
-		line.setAttribute("y2", y2);
-		line.setAttribute("stroke", "#004f75");
-		line.setAttribute("stroke-width", 0.5);
-		ele.appendChild(line);
-		var circle = document.createElementNS("http://www.w3.org/2000/svg","circle");
-		circle.setAttribute("cx", x2);
-		circle.setAttribute("cy", y2);
-		circle.setAttribute("r", 0.25);
-		circle.setAttribute("fill", "#004f75");
-		ele.appendChild(circle);
-		
-	}
-
-	ele.addEventListener('mousedown', function(e){
-		drawLine(0, 0, 100, 100);
-		start = true;
-		lastX = e.offsetX;
-		lastY = e.offsetY;
-		e.preventDefault();
-		e.stopPropagation();
-		e.target.style.cursor = 'glyphicons_pencil.ico), move';
-	}, false);
-	
-	ele.addEventListener('mousemove', function(e) {
-		if(start){
-			drawLine(lastX, lastY, e.offsetX, e.offsetY);
-			lastX = e.offsetX;
-			lastY = e.offsetY;
-		}
-	}, false);
-	
-	ele.addEventListener('mouseup', function(e) {
-		start = false;
-		e.target.style.cursor = 'glyphicons_pencil.ico), default';
-	}, false);
-}
-setCursor();
-
 </script>
 </body>
 </html>
