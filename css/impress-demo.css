@@ -961,7 +961,8 @@ padding: 5px;
 }
 #bg-div{
 width: 280px; 
-height: 626px; 
-background:url(../images/branchingouttree-011.png) no-repeat; 
+height: 626px;
+opacity: 0.9;
+background:url(../images/branchingouttree.svg) no-repeat; 
 background-size: 280px;
 }

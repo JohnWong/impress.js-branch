@@ -1,0 +1,118 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1400" height="3130">
+	<defs>
+		<path id="leaf" d="M70 0L5 170C-10 210 15 240 50 240L90 240 C125 240 150 210 135 170 Z" style="stroke:none; fill:#864599;"></path>
+		<path id="trunk" d="M630 3125L560 3120C580 2900 600 2800 565 2500C540 2360 540 2375 515 2300C450 2150 440 2120 370 2000L332 1970 L345 1960L315 1910L285 1892L295 1880L265 1835L228 1813L242 1810L210 1766L175 1750L172 1746L194 1747L148 1700L118 1692L140 1690L70 1636L40 1632L64 1632L32 1610L22 1590L36 1610L72 1632L100 1650L96 1628L106 1656L140 1682L174 1716L176 1694L184 1724L232 1774L236 1752L246 1790L284 1834L292 1820L302 1860L342 1912L358 1914L366 1948L446 2068L524 2208L502 2074L474 1956L430 1806L394 1700L360 1596L334 1568L346 1558L332 1514L308 1485L322 1485L306 1430L286 1406L298 1404L298 1404L274 1326L256 1306L268 1310L246 1238L230 1222L240 1224L226 1170L232 1184L238 1172L234 1188L256 1254L258 1260L266 1244L262 1270L294 1362L302 1350L300 1376L326 1450L336 1438L334 1470L350 1518L362 1520L364 1550L378 1590L392 1590L392 1628L482 1856L490 1706C494 1640 494 1640 486 1574C468 1460 468 1460 440 1346L424 1324L432 1318L414 1250L398 1234L408 1228L378 1156L360 1142L370 1142C354 1108 354 1108 330 1080L312 1076L322 1072L274 1028L294 1042L290 1024L300 1048C332 1074 334 1080 356 1104L358 1092L364 1116C382 1148 384 1150 398 1182L408 1170L404 1192C420 1230 420 1230 434 1270L446 1264L444 1294C464 1360 466 1360 482 1426C500 1506 500 1506 518 1588C548 1504 544 1504 576 1422L570 1394L584 1390L602 1340L598 1308L610 1314L636 1242L632 1212L644 1224L658 1178C668 1074 664 1074 658 974L648 950L658 950L650 872L638 852L646 850L639 785L627 771L636 768L630 704L620 694L628 692L626 674L636 728L642 720L638 738L650 818L658 812L652 830L662 898L672 888L664 912C676 994 674 996 676 1015C680 1066 680 1068 682 1124L696 1097L706 1072L706 1050L708 1074L696 1106L710 1100L694 1112L682 1134L678 1194L682 1194C742 1084 742 1082 814 972C872 886 872 886 934 800C972 740 974 742 1000 682L1052 566L1052 546L1058 548L1090 466L1087 453L1094 454L1108 410L1112 384L1112 403L1108 422L1114 418L1106 428L1082 506L1090 504L1078 516L1062 563L1038 626L1006 702L1012 700L1078 610C1110 566 1112 564 1138 520L1178 448C1200 404 1200 404 1218 362C1238 314 1238 316 1252 268C1268 224 1266 222 1278 178L1294 104C1304 58 1304 58 1312 12L1298 102L1288 154L1270 232L1248 304L1220 378L1180 466L1142 536L1112 582L1118 580L1180 540L1236 506L1244 490L1244 500C1276 483 1276 483 1310 466L1314 458L1316 464L1344 454C1357 450 1357 450 1370 458C1357 452 1357 452 1340 458L1288 482L1288 488L1276 488L1236 512L1194 540L1150 570L1092 617L1048 676L1000 744L942 824L878 914L872 928L882 920L938 876L1006 826L1016 806L1022 816L1084 772L1090 756L1096 766L1158 726L1162 714L1166 720L1212 696L1238 684L1252 668L1240 686L1210 700L1218 702L1204 704C1168 724 1166 724 1130 750L1140 752L1123 754L1064 794L1072 802L1052 804L996 846L936 896L878 948L840 986L794 1050L732 1160L680 1260L628 1372L620 1398L630 1384L676 1334L766 1240L772 1216L782 1224L820 1184L826 1164L836 1170L886 1120L888 1104L894 1112L952 1064L952 1052L958 1060L994 1034L1010 1032L994 1036L958 1064L930 1090L940 1092L924 1096L870 1148L884 1152L860 1158L816 1206L830 1210L804 1220L730 1304L678 1368L618 1448C600 1476 600 1476 584 1510C564 1558 566 1554 552 1603C538 1684 538 1684 530 1766C526 1900 530 1900 544 2036L548 2046L554 2036L572 1934L594 1834L622 1736L614 1708L630 1706L648 1650L644 1614L660 1618L676 1568L674 1530L688 1540L720 1474L718 1444L730 1456C754 1420 754 1418 782 1382L784 1356L790 1374L826 1338L856 1316L868 1292L854 1320L828 1340L844 1342L826 1344L794 1376L762 1420L778 1418L752 1436L716 1504L734 1500L708 1524L686 1590L700 1590L676 1618L662 1668L678 1668L658 1694L638 1768L610 1912L590 2052L586 2180C592 2256 592 2258 602 2330C620 2436 620 2438 632 2544L640 2536L678 2434L718 2336L784 2196L784 2156L806 2154L828 2108L830 2070L848 2074L876 2022L878 1982L894 1994L926 1944L926 1912L942 1922L982 1870L986 1838L994 1856L1044 1806L1052 1780L1056 1798L1120 1754L1134 1730L1122 1755L1138 1748L1118 1760L1092 1778L1112 1780L1084 1784L1032 1828L1048 1830L1022 1838L972 1900L990 1900L960 1918L926 1970L946 1968L916 1988L884 2046L904 2048L870 2076L846 2130L858 2140L830 2166L770 2308L720 2442L684 2560L656 2683L648 2798L644 2908L638 3028Z" style="stroke: #333; fill: black;"></path>
+		
+	</defs>
+	<use xlink:href="#leaf" transform="translate(682,1194) rotate(228) scale(0.2)"></use>
+	<use xlink:href="#leaf" transform="translate(687,1132) rotate(166) scale(0.22)"></use>
+	<use xlink:href="#trunk"></use>
+	<use xlink:href="#leaf" transform="translate(27,1582) rotate(145) scale(0.11)"></use>
+	<use xlink:href="#leaf" transform="translate(35,1622) rotate(91) scale(0.13)"></use>
+	<use xlink:href="#leaf" transform="translate(104,1622) rotate(164) scale(0.16)"></use>
+	<use xlink:href="#leaf" transform="translate(120,1674) rotate(109) scale(0.21)"></use>
+	<use xlink:href="#leaf" transform="translate(192,1687) rotate(167) scale(0.26)"></use>
+	<use xlink:href="#leaf" transform="translate(178,1728) rotate(111) scale(0.28)"></use>
+	<use xlink:href="#leaf" transform="translate(254,1744) rotate(165) scale(0.31)"></use>
+	<use xlink:href="#leaf" transform="translate(236,1790) rotate(113) scale(0.34)"></use>
+	<use xlink:href="#leaf" transform="translate(315,1816) rotate(175) scale(0.38)"></use>
+	<use xlink:href="#leaf" transform="translate(296,1858) rotate(115) scale(0.47)"></use>
+	<use xlink:href="#leaf" transform="translate(387,1915) rotate(190) scale(0.52)"></use>
+	<use xlink:href="#leaf" transform="translate(349,1933) rotate(120) scale(0.54)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(250,1171) rotate(195) scale(0.12)"></use>
+	<use xlink:href="#leaf" transform="translate(234,1212) rotate(132) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(282,1241) rotate(192) scale(0.18)"></use>
+	<use xlink:href="#leaf" transform="translate(260,1292) rotate(132) scale(0.22)"></use>
+	<use xlink:href="#leaf" transform="translate(322,1346) rotate(190) scale(0.27)"></use>
+	<use xlink:href="#leaf" transform="translate(294,1385) rotate(120) scale(0.29)"></use>
+	<use xlink:href="#leaf" transform="translate(362,1439) rotate(194) scale(0.38)"></use>
+	<use xlink:href="#leaf" transform="translate(320,1456) rotate(119) scale(0.40)"></use>
+	<use xlink:href="#leaf" transform="translate(392,1524) rotate(194) scale(0.43)"></use>
+	<use xlink:href="#leaf" transform="translate(356,1534) rotate(127) scale(0.47)"></use>
+	<use xlink:href="#leaf" transform="translate(422,1594) rotate(194) scale(0.46)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(294,1018) rotate(162) scale(0.11)"></use>
+	<use xlink:href="#leaf" transform="translate(310,1064) rotate(102) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(372,1086) rotate(176) scale(0.19)"></use>
+	<use xlink:href="#leaf" transform="translate(362,1124) rotate(122) scale(0.22)"></use>
+	<use xlink:href="#leaf" transform="translate(424,1168) rotate(192) scale(0.24)"></use>
+	<use xlink:href="#leaf" transform="translate(410,1214) rotate(132) scale(0.30)"></use>
+	<use xlink:href="#leaf" transform="translate(468,1265) rotate(192) scale(0.39)"></use>
+	<use xlink:href="#leaf" transform="translate(441,1298) rotate(132) scale(0.39)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(714,1048) rotate(172) scale(0.12)"></use>
+	<use xlink:href="#leaf" transform="translate(720,1106) rotate(228) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(680,1132) rotate(170) scale(0.19)"></use>
+	<use xlink:href="#leaf" transform="translate(684,1204) rotate(228) scale(0.24)"></use>
+	<use xlink:href="#leaf" transform="translate(651,1204) rotate(166) scale(0.26)"></use>
+	<use xlink:href="#leaf" transform="translate(662,1286) rotate(228) scale(0.31)"></use>
+	<use xlink:href="#leaf" transform="translate(624,1298) rotate(170) scale(0.33)"></use>
+	<use xlink:href="#leaf" transform="translate(642,1374) rotate(218) scale(0.41)"></use>
+	<use xlink:href="#leaf" transform="translate(604,1380) rotate(168) scale(0.43)"></use>
+	<use xlink:href="#leaf" transform="translate(614,1472) rotate(228) scale(0.46)"></use>
+	<use xlink:href="#leaf" transform="translate(622,682) rotate(128) scale(0.12)"></use>
+	<use xlink:href="#leaf" transform="translate(651,726) rotate(214) scale(0.13)"></use>
+	<use xlink:href="#leaf" transform="translate(640,760) rotate(148) scale(0.19)"></use>
+	<use xlink:href="#leaf" transform="translate(670,820) rotate(214) scale(0.21)"></use>
+	<use xlink:href="#leaf" transform="translate(648,836) rotate(132) scale(0.23)"></use>
+	<use xlink:href="#leaf" transform="translate(690,896) rotate(218) scale(0.27)"></use>
+	<use xlink:href="#leaf" transform="translate(662,932) rotate(138) scale(0.3)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(1014,1040) rotate(280) scale(0.1)"></use>
+	<use xlink:href="#leaf" transform="translate(968,1052) rotate(194) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(944,1102) rotate(260) scale(0.19)"></use>
+	<use xlink:href="#leaf" transform="translate(908,1102) rotate(186) scale(0.2)"></use>
+	<use xlink:href="#leaf" transform="translate(888,1164) rotate(260) scale(0.21)"></use>
+	<use xlink:href="#leaf" transform="translate(848,1160) rotate(182) scale(0.25)"></use>
+	<use xlink:href="#leaf" transform="translate(838,1226) rotate(256) scale(0.29)"></use>
+	<use xlink:href="#leaf" transform="translate(798,1217) rotate(190) scale(0.34)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(1260,668) rotate(206) scale(0.09)"></use>
+	<use xlink:href="#leaf" transform="translate(1220,710) rotate(276) scale(0.11)"></use>
+	<use xlink:href="#leaf" transform="translate(1176,716) rotate(206) scale(0.16)"></use>
+	<use xlink:href="#leaf" transform="translate(1142,764) rotate(272) scale(0.19)"></use>
+	<use xlink:href="#leaf" transform="translate(1106,758) rotate(202) scale(0.20)"></use>
+	<use xlink:href="#leaf" transform="translate(1078,814) rotate(266) scale(0.23)"></use>
+	<use xlink:href="#leaf" transform="translate(1038,808) rotate(200) scale(0.26)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(1116,376) rotate(156) scale(0.09)"></use>
+	<use xlink:href="#leaf" transform="translate(1122,422) rotate(232) scale(0.1)"></use>
+	<use xlink:href="#leaf" transform="translate(1098,448) rotate(164) scale(0.15)"></use>
+	<use xlink:href="#leaf" transform="translate(1098,512) rotate(232) scale(0.17)"></use>
+	<use xlink:href="#leaf" transform="translate(1066,537) rotate(166) scale(0.22)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(1370,466) rotate(298) scale(0.11)"></use>
+	<use xlink:href="#leaf" transform="translate(1328,460) rotate(208) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(1294,500) rotate(268) scale(0.17)"></use>
+	<use xlink:href="#leaf" transform="translate(1260,492) rotate(204) scale(0.19)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(876,1290) rotate(194) scale(0.09)"></use>
+	<use xlink:href="#leaf" transform="translate(848,1352) rotate(266) scale(0.15)"></use>
+	<use xlink:href="#leaf" transform="translate(800,1352) rotate(184) scale(0.18)"></use>
+	<use xlink:href="#leaf" transform="translate(786,1430) rotate(248) scale(0.21)"></use>
+	<use xlink:href="#leaf" transform="translate(744,1438) rotate(170) scale(0.28)"></use>
+	<use xlink:href="#leaf" transform="translate(746,1516) rotate(236) scale(0.3)"></use>
+	<use xlink:href="#leaf" transform="translate(698,1518) rotate(164) scale(0.33)"></use>
+	<use xlink:href="#leaf" transform="translate(720,1604) rotate(226) scale(0.36)"></use>
+	<use xlink:href="#leaf" transform="translate(678,1602) rotate(168) scale(0.45)"></use>
+	<use xlink:href="#leaf" transform="translate(708,1686) rotate(220) scale(0.49)"></use>
+	<use xlink:href="#leaf" transform="translate(652,1688) rotate(156) scale(0.49)"></use>
+	
+	<use xlink:href="#leaf" transform="translate(1142,1730) rotate(196) scale(0.1)"></use>
+	<use xlink:href="#leaf" transform="translate(1114,1788) rotate(262) scale(0.14)"></use>
+	<use xlink:href="#leaf" transform="translate(1066,1776) rotate(186) scale(0.17)"></use>
+	<use xlink:href="#leaf" transform="translate(1060,1842) rotate(250) scale(0.22)"></use>
+	<use xlink:href="#leaf" transform="translate(1010,1836) rotate(186) scale(0.26)"></use>
+	<use xlink:href="#leaf" transform="translate(1000,1914) rotate(244) scale(0.3)"></use>
+	<use xlink:href="#leaf" transform="translate(954,1906) rotate(172) scale(0.34)"></use>
+	<use xlink:href="#leaf" transform="translate(960,1988) rotate(244) scale(0.38)"></use>
+	<use xlink:href="#leaf" transform="translate(910,1970) rotate(170) scale(0.42)"></use>
+	<use xlink:href="#leaf" transform="translate(918,2072) rotate(246) scale(0.43)"></use>
+	<use xlink:href="#leaf" transform="translate(870,2060) rotate(174) scale(0.49)"></use>
+	<use xlink:href="#leaf" transform="translate(884,2164) rotate(234) scale(0.58)"></use>
+	<use xlink:href="#leaf" transform="translate(836,2146) rotate(176) scale(0.58)"></use>
+</svg>
