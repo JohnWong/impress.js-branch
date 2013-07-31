@@ -92,9 +92,13 @@
 		line.setAttribute("stroke", colors[color]);
 		line.setAttribute("stroke-width", width * 2);
 		ele.appendChild(line);
+		drawCircle(x2, y2);
+	}
+	
+	function drawCircle(x, y){
 		var circle = document.createElementNS(ns,"circle");
-		circle.setAttribute("cx", x2);
-		circle.setAttribute("cy", y2);
+		circle.setAttribute("cx", x);
+		circle.setAttribute("cy", y);
 		circle.setAttribute("r", width);
 		circle.setAttribute("fill", colors[color]);
 		ele.appendChild(circle);
@@ -104,6 +108,7 @@
 		start = true;
 		lastX = e.offsetX? e.offsetX: e.layerX;
 		lastY = e.offsetY? e.offsetY: e.layerY;
+		drawCircle(lastX, lastY);
 		e.preventDefault();
 		e.stopPropagation();
 		e.target.style.cursor = 'glyphicons_pencil.ico), move';
@@ -129,7 +134,9 @@
 		else
 			oriWidth = i;
 		var root = document.getElementById(impress().rootId);
-		var transform = root.style.webkitTransform?root.style.webkitTransform: root.style.MozTransform;
+		var transform = root.style.webkitTransform;
+		if(!transform)
+			transform = root.style.MozTransform;
 		var mc = transform.match(/scale\([0-9\.]*\)/)[0];
 		mc = mc.replace("scale(", "").replace(")", "");
 		width = i * 10.0 / Number(mc);
