@@ -85,7 +85,7 @@ table {
     want to leave anybody behind.
 */
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', arial, sans-serif;
     min-height: 740px;
 
 /*
@@ -563,7 +563,7 @@ a:focus {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 200px;
+    top: 150px;
 
     background: rgba(0,0,0,0.5);
     color: #EEE;
@@ -965,4 +965,36 @@ height: 626px;
 opacity: 0.9;
 background:url(../images/branchingouttree.svg) no-repeat; 
 background-size: 280px;
+}
+#github{
+position: fixed;
+left: 20px;
+bottom: 45px;
+}
+.impress-on-overall .hint {
+    /*
+        We remove the transparency and position the hint in its default fixed
+        position.
+    */
+    opacity: 1;
+
+    -webkit-transform: translateY(0px);
+    -moz-transform:    translateY(0px);
+    -ms-transform:     translateY(0px);
+    -o-transform:      translateY(0px);
+    transform:         translateY(0px);
+
+    /*
+        Now for fade in transition we have the oposite situation from the one
+        above.
+
+        First after 4.5s delay we animate the transform property to move the hint
+        into its correct position and after that we fade it in with opacity
+        transition.
+    */
+    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s 4.5s;
+    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s 4.5s;
+    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s 4.5s;
+    -o-transition:      opacity 1s 5s,      -o-transform 0.5s 4.5s;
+    transition:         opacity 1s 5s,         transform 0.5s 4.5s;
 }
