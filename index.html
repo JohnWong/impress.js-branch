@@ -43,6 +43,7 @@
 					Right Arrow: next step<br>
 					Up Arrow: first step<br>
 					Down Arrow: on/off pen<br>
+					Space/Tab: next step<br>
 					Click in a Step: switch to it<br>
 					Click out of Steps: switch to first<br>
 					<div style="font-size: 20px;"><br>PS.<br>
@@ -53,29 +54,28 @@
 		</div>
 		<div id="chapter-2" class="step" style="height: 650px;" data-x="-27.5" data-y="14" data-scale="0.2025" data-rotate="-15">
 			<div class="float-div">
-				<div class="blue-font title-two" style="margin-left: 300px; margin-top: 80px;">Bottom Nav Bar</div>
-				<div class="black-font content" style="margin-left: 160px; margin-top: 10px;width: 420px;">
-					You may have noticed bottom navigation bar. You can also navigate with buttons provided there. Fullscreen button is provided. It is at right most.<br>
-					<div style="font-size: 20px;"><br>By the way, sorry about my bad English. Please help me to edit these descriptions.</div>
+				<div class="blue-font title-two" style="margin-left: 260px; margin-top: 80px;">Bottom Nav Bar</div>
+				<div class="black-font content" style="margin-left: 210px; margin-top: 10px;width: 420px;">
+					You may have noticed navigation bar at bottom. You can also navigate with buttons provided there. Fullscreen button is also provided. It is at right most. The other buttons will be introduced in the next.<br>
 				</div>
 			</div>
 		</div>
 		<div id="chapter-3" class="step" style="height: 650px;" data-x="102" data-y="-141" data-scale="0.1725" data-rotate="-5">
 			<div class="float-div">
 				<div class="blue-font title-two" style="margin-left: 350px; margin-top: 10px;">Use Pen</div>
-				<div class="black-font content" style="margin-left: 190px; margin-top: 10px;width: 420px;">You can also draw something. Click pen button in bottom bar. Then click on/off. Now your mouse is become a pen. Mark something important or draw a picture. You can also choose color and width. To switch more quickly, you can press down arrow.</div>
+				<div class="black-font content" style="margin-left: 190px; margin-top: 10px;width: 450px;">You can also draw something freely. Click pen button in bottom bar. Then click on/off. Now your mouse becomes a pen! You can mark something important or draw a picture. You can also choose color and width of pen. To switch to pen or mouse quickly, you can press down arrow.</div>
 			</div>
 		</div>
 		<div id="chapter-4" class="step" style="height: 650px;" data-x="264" data-y="-194" data-scale="0.1275" data-rotate="45">
 			<div class="float-div">
 				<div class="blue-font title-two" style="margin-left: 350px; margin-top: 80px;">Auto Play</div>
-				<div class="black-font content" style="margin-left: 190px; margin-top: 10px;width: 420px;">Release your hand and make this slice play automatically. Click timer button beside fullscreen button. Then choose how long will it wait for to switch to next step. </div>
+				<div class="black-font content" style="margin-left: 190px; margin-top: 10px;width: 420px;">Release your hand and make this slice play automatically. Click timer button, which is besides fullscreen button. Then choose how long will it wait for to switch to next step. </div>
 			</div>
 		</div>
 		<div id="chapter-5" class="step" style="height: 650px;" data-x="213.75" data-y="-273" data-scale="0.0825" data-rotate="0">
 			<div class="float-div">
 				<div class="blue-font title-two" style="margin-left: 280px; margin-top: 80px;">Project Summary</div>
-				<div class="black-font content" style="margin-left: 190px; margin-top: 10px;width: 420px;">Source code is available on <a href="https://github.com/JohnWong/impress.js">GitHub</a>. It is forked from <a href="https://github.com/bartaz/impress.js/">impress.js</a>. I refer to Prezi to draw these images.<br>If your are interested in it, please contact <a href="mailto:huangxiaozhe1988@gamil.com">me</a></div>
+				<div class="black-font content" style="margin-left: 190px; margin-top: 10px; width: 420px; ">Source code is available on <a href="https://github.com/JohnWong/impress.js">GitHub</a>. It is forked from <a href="https://github.com/bartaz/impress.js/">impress.js</a>. I refer to Prezi to draw these images.<br><br>If your are interested in it, please contact me (<a href="mailto:huangxiaozhe1988@gamil.com">huangxiaozhe1988@gamil.com</a>)</div>
 			</div>
 		</div>
 		<div id="draft" data-x="-450" data-y="-350" data-scale="0.1">
@@ -93,10 +93,10 @@
 					var ele = document.getElementById("draft-svg");
 					var lastX;
 					var lastY;
-					var start = false;
 					var colors = ["red", "yellow", "#004f75", "green"];
 					var ns = "http://www.w3.org/2000/svg";
 					function drawLine(x1, y1, x2, y2) {
+						console.log(x1, y1, x2, y2);
 						var line = document.createElementNS(ns,"line");
 						line.setAttribute("x1", x1);
 						line.setAttribute("y1", y1);
@@ -117,27 +117,29 @@
 						ele.appendChild(circle);
 					}
 
+					var moveHandler = function(e) {
+						var x = e.offsetX? e.offsetX: e.layerX;
+						var y = e.offsetY? e.offsetY: e.layerY;
+						var x1 = lastX, y1 = lastY;
+						setTimeout(function(){
+							drawLine(x1, y1, x, y);
+						}, 0);
+						lastX = x;
+						lastY = y;
+					};
+
 					ele.addEventListener('mousedown', function(e){
-						start = true;
 						lastX = e.offsetX? e.offsetX: e.layerX;
 						lastY = e.offsetY? e.offsetY: e.layerY;
 						drawCircle(lastX, lastY);
+						ele.addEventListener('mousemove', moveHandler, false);
 						e.preventDefault();
 						e.stopPropagation();
 					}, false);
 
-					ele.addEventListener('mousemove', function(e) {
-						if(start){
-							var x = e.offsetX? e.offsetX: e.layerX;
-							var y = e.offsetY? e.offsetY: e.layerY;
-							drawLine(lastX, lastY, x, y);
-							lastX = x;
-							lastY = y;
-						}
-					}, false);
 
 					ele.addEventListener('mouseup', function(e) {
-						start = false;
+						ele.removeEventListener('mousemove', moveHandler, false);
 					}, false);
 
 					function setWidth(i){
