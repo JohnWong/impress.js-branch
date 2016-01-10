@@ -174,7 +174,7 @@
                            
                           // and `classList` and `dataset` APIs
                            ( body.classList ) &&
-                           ( body.dataset ) );
+                           ( body.dataset );
     
     if (!impressSupported) {
         // we can't be sure that `classList` is supported
